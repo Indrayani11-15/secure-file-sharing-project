@@ -1,0 +1,208 @@
+<html lang="zxx">
+<head>
+    <title>CipherShare | Owner Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="keywords" content="Intense Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+    <script>
+        addEventListener("load", function () { setTimeout(hideURLbar, 0); }, false);
+        function hideURLbar() { window.scrollTo(0, 1); }
+    </script>
+    <link href="../static/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet" media="all">
+    <link href="../static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; }
+        :root {
+            --forest-dark:  #1a3a2a; --forest-mid: #2d5a3d; --forest-light: #3d7a52;
+            --gold: #c8b87a; --gold-light: #e0d0a0;
+            --cream: #f5f2eb; --cream-dark: #ede8dc;
+            --text-dark: #1e2a1e; --text-mid: #4a5c45; --text-light: #8a7a5e;
+            --border: #ddd6c8; --white: #ffffff;
+        }
+        body { font-family: 'Source Sans Pro', sans-serif; background: var(--cream); margin: 0; padding: 0; min-height: 100vh; display: flex; flex-direction: column; }
+
+        /* HEADER */
+        header#home { background: var(--forest-dark); border-bottom: 3px solid var(--gold); position: sticky; top: 0; z-index: 200; box-shadow: 0 4px 32px rgba(0,0,0,0.3); }
+        header#home .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+        header#home .header { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+        #logo h1 { margin: 0; }
+        #logo h1 a { color: var(--gold); text-decoration: none; font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; }
+        .nav_w3ls nav ul.menu { list-style: none; display: flex; gap: 4px; margin: 0; padding: 0; }
+        .nav_w3ls nav ul.menu li a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 13px; font-weight: 600; padding: 8px 16px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.8px; transition: all 0.2s; display: block; }
+        .nav_w3ls nav ul.menu li a:hover { color: var(--gold); background: rgba(200,184,122,0.1); }
+        .nav_w3ls nav label.toggle { display: none; color: var(--gold); cursor: pointer; font-size: 14px; padding: 8px 14px; border: 1px solid rgba(200,184,122,0.3); border-radius: 2px; }
+        #drop { display: none; }
+
+        /* BREADCRUMB */
+        nav[aria-label="breadcrumb"] { background: var(--forest-mid) !important; padding: 10px 0 !important; }
+        nav[aria-label="breadcrumb"] .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+        ol.breadcrumb { display: flex !important; align-items: center !important; list-style: none !important; margin: 0 !important; padding: 0 !important; background: transparent !important; border: none !important; box-shadow: none !important; }
+        .breadcrumb-item + .breadcrumb-item::before { content: "›" !important; color: rgba(200,184,122,0.4) !important; padding: 0 8px !important; }
+        .breadcrumb-item a { color: rgba(200,184,122,0.65) !important; text-decoration: none; font-size: 12px; }
+        .breadcrumb-item a:hover { color: var(--gold) !important; }
+        .breadcrumb-item.active { color: var(--gold) !important; font-size: 12px; font-weight: 600; }
+
+        /* KILL ORIGINAL STYLES */
+        .inner-banner-w3ls { display: none !important; }
+        .contact-wthree, .align-w3 { background: transparent !important; }
+        .contact-form-wthreelayouts { background: transparent !important; border: none !important; box-shadow: none !important; padding: 0 !important; margin: 0 !important; }
+        .wthree_pvt_title { width: 100% !important; max-width: 100% !important; text-align: left !important; }
+
+        /* MAIN SECTION */
+        section.contact-wthree { flex: 1; display: flex !important; align-items: center; justify-content: center; padding: 56px 24px !important; }
+        section.contact-wthree .container { max-width: 920px !important; width: 100%; padding: 0 !important; }
+
+        /* SPLIT PANEL */
+        .login-panel { display: grid; grid-template-columns: 1fr 1fr; border-radius: 4px; overflow: hidden; box-shadow: 0 24px 80px rgba(26,58,42,0.18); }
+
+        /* Left */
+        .login-left {
+            background: linear-gradient(160deg, var(--forest-dark) 0%, var(--forest-mid) 100%);
+            padding: 56px 44px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden;
+        }
+        .login-left::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c8b87a' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+        .login-brand-icon { width: 64px; height: 64px; background: rgba(200,184,122,0.1); border: 1px solid rgba(200,184,122,0.25); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 28px; margin-bottom: 28px; }
+        .login-brand h2 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--white); margin: 0 0 12px; line-height: 1.2; }
+        .login-brand p { color: rgba(255,255,255,0.45); font-size: 14px; line-height: 1.75; margin: 0; }
+        .login-divider { width: 40px; height: 2px; background: rgba(200,184,122,0.3); margin: 28px 0 16px; }
+        .login-left-footer p { color: rgba(255,255,255,0.28); font-size: 12px; margin: 0; line-height: 1.6; }
+        .login-left-footer a { color: var(--gold); text-decoration: none; }
+        .login-left-footer a:hover { color: var(--gold-light); }
+
+        /* Right */
+        .login-right { background: var(--white); padding: 56px 44px; display: flex; flex-direction: column; justify-content: center; }
+        .login-right-eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--forest-mid); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2.5px; margin-bottom: 10px; }
+        .login-right-eyebrow::before { content: ""; display: inline-block; width: 20px; height: 2px; background: var(--forest-mid); opacity: 0.5; }
+        .w3pvt-title { font-family: 'Playfair Display', serif !important; font-size: 26px !important; font-weight: 700 !important; color: var(--forest-dark) !important; margin: 0 0 32px !important; line-height: 1.2 !important; }
+
+        /* Form */
+        .register-wthree .form-group { margin-bottom: 20px; }
+        .register-wthree label { display: block; color: var(--forest-mid); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 7px; }
+        .input-icon-wrap { position: relative; }
+        .input-icon-wrap .form-control { padding-left: 42px !important; }
+        .input-icon-wrap .field-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--text-light); font-size: 14px; pointer-events: none; }
+        .register-wthree .form-control { width: 100%; border: 1px solid var(--border); border-radius: 2px; padding: 12px 14px; font-size: 14px; font-family: 'Source Sans Pro', sans-serif; color: var(--text-dark); background: #fdfcf9; transition: border-color 0.2s, box-shadow 0.2s; outline: none; }
+        .register-wthree .form-control:focus { border-color: var(--forest-mid); box-shadow: 0 0 0 3px rgba(45,90,61,0.08); background: var(--white); }
+
+        /* Buttons */
+        .btn-w3layouts { display: block; width: 100%; padding: 13px 20px; font-family: 'Source Sans Pro', sans-serif; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 1.8px; border: none; border-radius: 2px; cursor: pointer; transition: all 0.2s; margin-bottom: 10px; text-align: center; }
+        .bg-theme { background: var(--forest-dark) !important; color: var(--gold) !important; }
+        .bg-theme:hover { background: var(--forest-mid) !important; color: var(--gold-light) !important; }
+        .btn-block + .btn-block { background: var(--white); color: var(--text-light); border: 1px solid var(--border) !important; }
+        .btn-block + .btn-block:hover { background: var(--cream); color: var(--text-mid); }
+
+        /* FOOTER */
+        .cpy-right { background: var(--forest-dark) !important; border-top: 3px solid rgba(200,184,122,0.2); padding: 20px 32px !important; text-align: center; }
+        .cpy-right p { color: rgba(200,184,122,0.4) !important; font-size: 12px; margin: 0; }
+        .cpy-right a { color: var(--gold) !important; text-decoration: none; }
+        .move-top { position: fixed; bottom: 28px; right: 28px; width: 44px; height: 44px; background: var(--forest-dark); border: 1px solid var(--gold); border-radius: 2px; color: var(--gold) !important; font-size: 16px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.2s; box-shadow: 0 4px 20px rgba(0,0,0,0.25); z-index: 999; }
+        .move-top:hover { background: var(--forest-mid); transform: translateY(-2px); }
+
+        @media (max-width: 768px) {
+            .login-panel { grid-template-columns: 1fr; }
+            .login-left { display: none; }
+            .login-right { padding: 40px 28px; }
+        }
+        @media (max-width: 640px) {
+            header#home .header { flex-direction: column; gap: 12px; align-items: flex-start; }
+            .nav_w3ls nav label.toggle { display: block; }
+            .nav_w3ls nav ul.menu { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--forest-dark); padding: 12px 0; border-top: 1px solid rgba(200,184,122,0.15); gap: 0; }
+            #drop:checked ~ ul.menu { display: flex; }
+            .nav_w3ls nav { position: relative; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <header id="home">
+        <div class="container">
+            <div class="header d-lg-flex justify-content-between align-items-center py-sm-3 py-2 px-sm-2 px-1">
+                <div id="logo"><h1><a href="#">CipherShare</a></h1></div>
+                <div class="nav_w3ls ml-lg-5">
+                    <nav>
+                        <label for="drop" class="toggle">Menu</label>
+                        <input type="checkbox" id="drop" />
+                        <ul class="menu">{% include 'Menu/Home.html'  %}</ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="inner-banner-w3ls d-flex flex-column justify-content-center align-items-center"></div>
+
+    <nav aria-label="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb d-flex justify-content-center">
+                <li class="breadcrumb-item"><a href="/" class="m-0">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Owner Login</li>
+            </ol>
+        </div>
+    </nav>
+
+    <section class="contact-wthree align-w3" id="contact">
+        <div class="container">
+            <div class="wthree_pvt_title">
+                <div class="contact-form-wthreelayouts">
+                    <div class="login-panel">
+
+                        <!-- Left Branding -->
+                        <div class="login-left">
+                            <div class="login-brand">
+                                <div class="login-brand-icon"><span class="fa fa-user-circle"></span></div>
+                                <h2>Owner Portal</h2>
+                                <p>Sign in to securely upload, protect, and share files with your clients while maintaining full ownership and controlled access.</p>
+                            </div>
+                            <div class="login-left-footer">
+                                <div class="login-divider"></div>
+                                <p>Don't have an account? <a href="/NewOwner">Register as Owner →</a></p>
+                            </div>
+                        </div>
+
+                        <!-- Right Form -->
+                        <div class="login-right">
+                            <div class="login-right-eyebrow">Owner Access</div>
+                            <h4 class="w3pvt-title">Owner Login Here..!</h4>
+                            <form action="/ownerlogin" method="post" class="register-wthree">
+                                <div class="form-group">
+                                    <label>User Name</label>
+                                    <div class="input-icon-wrap">
+                                        <span class="fa fa-user field-icon"></span>
+                                        <input class="form-control" type="text" placeholder="Johnson" name="uname" required="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <div class="input-icon-wrap">
+                                        <span class="fa fa-lock field-icon"></span>
+                                        <input class="form-control" type="password" placeholder="••••••••" name="password" required="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Login Key</label>
+                                    <div class="input-icon-wrap">
+                                        <span class="fa fa-key field-icon"></span>
+                                        <input class="form-control" type="password" placeholder="••••••••" name="loginkey" required="">
+                                    </div>
+                                </div>
+                                <div class="form-group mb-0" style="margin-top:8px;">
+                                    <button type="submit" class="btn btn-w3layouts btn-block bg-theme text-wh w-100 font-weight-bold text-uppercase">Submit</button>
+                                    <button type="reset" class="btn btn-w3layouts btn-block bg-theme text-wh w-100 font-weight-bold text-uppercase">Reset</button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="cpy-right text-center">
+        <p class="text-wh">All rights reserved | Design by <a href="#"> Cloud.</a></p>
+    </div>
+    <a href="#home" class="move-top text-center"><span class="fa fa-level-up" aria-hidden="true"></span></a>
+</body>
+</html>

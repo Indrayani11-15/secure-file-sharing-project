@@ -1,0 +1,151 @@
+<html lang="zxx">
+<head>
+    <title>U Can Access | Server — File Information</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <script>
+        addEventListener("load",function(){setTimeout(hideURLbar,0);},false);
+        function hideURLbar(){window.scrollTo(0,1);}
+    </script>
+    <link href="../static/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet" media="all">
+    <link href="../static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; }
+        :root {
+            --forest-dark:#1a3a2a; --forest-mid:#2d5a3d; --forest-light:#3d7a52;
+            --gold:#c8b87a; --gold-light:#e0d0a0;
+            --cream:#f5f2eb; --text-dark:#1e2a1e; --text-light:#8a7a5e;
+            --border:#ddd6c8; --white:#ffffff;
+        }
+        body { font-family:'Source Sans Pro',sans-serif; background:var(--cream); color:var(--text-dark); margin:0; padding:0; }
+        header#home { background:var(--forest-dark); border-bottom:3px solid var(--gold); position:sticky; top:0; z-index:200; box-shadow:0 4px 32px rgba(0,0,0,0.3); }
+        header#home .container { max-width:1200px; margin:0 auto; padding:0 32px; }
+        header#home .header { display:flex; align-items:center; justify-content:space-between; padding:16px 0; }
+        #logo h1 { margin:0; line-height:1.2; }
+        #logo h1 a { color:var(--gold); text-decoration:none; font-family:'Playfair Display',serif; font-size:26px; font-weight:700; }
+        #logo h1 a::after { content:"Property Management"; display:block; font-family:'Source Sans Pro',sans-serif; font-size:10px; color:rgba(200,184,122,0.45); letter-spacing:3.5px; text-transform:uppercase; font-weight:400; margin-top:2px; }
+        .nav_w3ls nav ul.menu { list-style:none; display:flex; gap:4px; margin:0; padding:0; }
+        .nav_w3ls nav ul.menu li a { color:rgba(255,255,255,0.6); text-decoration:none; font-size:13px; font-weight:600; padding:8px 16px; border-radius:2px; text-transform:uppercase; letter-spacing:0.8px; transition:all 0.2s; display:block; }
+        .nav_w3ls nav ul.menu li a:hover { color:var(--gold); background:rgba(200,184,122,0.1); }
+        .nav_w3ls nav label.toggle { display:none; color:var(--gold); cursor:pointer; font-size:14px; padding:8px 14px; border:1px solid rgba(200,184,122,0.3); border-radius:2px; }
+        #drop { display:none; }
+        .inner-banner-w3ls { background:linear-gradient(135deg,var(--forest-dark) 0%,var(--forest-mid) 60%,var(--forest-light) 100%) !important; min-height:80px !important; position:relative; overflow:hidden; }
+        .inner-banner-w3ls::before { content:""; position:absolute; inset:0; pointer-events:none; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23c8b87a' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+        nav[aria-label="breadcrumb"] { background:var(--forest-mid) !important; padding:10px 0 !important; }
+        nav[aria-label="breadcrumb"] .container { max-width:1200px; margin:0 auto; padding:0 32px; }
+        ol.breadcrumb { display:flex !important; align-items:center !important; list-style:none !important; margin:0 !important; padding:0 !important; background:transparent !important; border:none !important; box-shadow:none !important; }
+        .breadcrumb-item + .breadcrumb-item::before { content:"›" !important; color:rgba(200,184,122,0.4) !important; padding:0 8px !important; }
+        .breadcrumb-item a { color:rgba(200,184,122,0.65) !important; text-decoration:none; font-size:12px; }
+        .breadcrumb-item a:hover { color:var(--gold) !important; }
+        .breadcrumb-item.active { color:var(--gold) !important; font-size:12px; font-weight:600; }
+        .contact-wthree { padding:60px 0 80px; background:var(--cream) !important; }
+        .contact-wthree .container { max-width:1200px; margin:0 auto; padding:0 32px; }
+        .contact-form-wthreelayouts,.align-w3,.wthree_pvt_title { background:transparent !important; border:none !important; box-shadow:none !important; padding:0 !important; margin:0 !important; }
+        .table-section { margin-bottom:56px; }
+        .table-section-header { display:flex; align-items:center; gap:16px; margin-bottom:20px; }
+        .table-section-icon { width:44px; height:44px; flex-shrink:0; background:linear-gradient(135deg,var(--forest-dark),var(--forest-mid)); border-radius:2px; display:flex; align-items:center; justify-content:center; color:var(--gold); font-size:18px; }
+        .table-section-title { font-family:'Playfair Display',serif; font-size:22px; font-weight:700; color:var(--forest-dark); margin:0 0 2px; }
+        .table-section-sub { font-size:13px; color:var(--text-light); margin:0; }
+        .table-card { background:var(--white); border:1px solid var(--border); border-radius:2px; overflow:hidden; box-shadow:0 4px 24px rgba(26,58,42,0.08); }
+        .table-card-top { height:4px; background:linear-gradient(to right,var(--forest-dark),var(--forest-mid),var(--gold)); }
+        .table-card table { width:100% !important; border-collapse:collapse !important; border:none !important; margin:0 !important; }
+        .table-card table tr[bgcolor] td { background:var(--forest-dark) !important; color:var(--gold) !important; font-size:11px !important; font-weight:700 !important; text-transform:uppercase !important; letter-spacing:1.5px !important; padding:14px 18px !important; border:none !important; text-align:left !important; white-space:nowrap; }
+        .table-card table tr[bgcolor] td div { text-align:left !important; }
+        .table-card table tr:not([bgcolor]) td { padding:13px 18px !important; border:none !important; border-bottom:1px solid var(--border) !important; font-size:14px !important; color:var(--text-dark) !important; font-family:'Source Sans Pro',sans-serif !important; vertical-align:middle !important; }
+        .table-card table tr:not([bgcolor]) td div { text-align:left !important; }
+        .table-card table tr:not([bgcolor]):last-child td { border-bottom:none !important; }
+        .table-card table tr:not([bgcolor]):nth-child(even) td { background:#fdfcf9 !important; }
+        .table-card table tr:not([bgcolor]):hover td { background:rgba(45,90,61,0.04) !important; }
+        /* Pubkey monospace truncate */
+        .pubkey-wrap { font-family:monospace; font-size:12px; color:var(--text-light); max-width:220px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; display:block; background:#f5f2eb; padding:4px 8px; border-radius:2px; border:1px solid var(--border); }
+        .cpy-right { background:var(--forest-dark) !important; border-top:3px solid rgba(200,184,122,0.2); padding:24px 32px !important; }
+        .cpy-right p { color:rgba(200,184,122,0.4) !important; font-size:13px; margin:0; }
+        .cpy-right a { color:var(--gold) !important; text-decoration:none; }
+        .move-top { position:fixed; bottom:28px; right:28px; width:44px; height:44px; background:var(--forest-dark); border:1px solid var(--gold); border-radius:2px; color:var(--gold) !important; font-size:16px; display:flex; align-items:center; justify-content:center; text-decoration:none; transition:all 0.2s; box-shadow:0 4px 20px rgba(0,0,0,0.25); z-index:999; }
+        .move-top:hover { background:var(--forest-mid); transform:translateY(-2px); }
+        @media(max-width:768px){ .table-card{overflow-x:auto;} .table-card table{min-width:640px;} header#home .header{flex-direction:column;gap:12px;align-items:flex-start;} .nav_w3ls nav label.toggle{display:block;} .nav_w3ls nav ul.menu{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--forest-dark);padding:12px 0;border-top:1px solid rgba(200,184,122,0.15);gap:0;} #drop:checked~ul.menu{display:flex;} .nav_w3ls nav{position:relative;width:100%;} }
+    </style>
+</head>
+<body>
+    <header id="home">
+        <div class="container">
+            <div class="header d-lg-flex justify-content-between align-items-center py-sm-3 py-2 px-sm-2 px-1">
+                <div id="logo"><h1><a href="#">U Can Access</a></h1></div>
+                <div class="nav_w3ls ml-lg-5">
+                    <nav>
+                        <label for="drop" class="toggle">Menu</label>
+                        <input type="checkbox" id="drop" />
+                        <ul class="menu">{% include 'Menu/Server.html' %}</ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="inner-banner-w3ls d-flex flex-column justify-content-center align-items-center"></div>
+
+    <nav aria-label="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb d-flex justify-content-center">
+                <li class="breadcrumb-item"><a href="/" class="m-0">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Server</li>
+            </ol>
+        </div>
+    </nav>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <script>
+          var messages = {{ messages | safe }};
+          for(var i=0;i<messages.length;i++){alert(messages[i]);}
+        </script>
+      {% endif %}
+    {% endwith %}
+
+    <section class="contact-wthree align-w3" id="contact">
+        <div class="container">
+            <div class="wthree_pvt_title">
+                <div class="contact-form-wthreelayouts">
+
+                    <div class="table-section">
+                        <div class="table-section-header">
+                            <div class="table-section-icon"><span class="fa fa-file-text"></span></div>
+                            <div>
+                                <p class="table-section-title">File Information</p>
+                                <p class="table-section-sub">All uploaded files and their associated public keys</p>
+                            </div>
+                        </div>
+                        <div class="table-card">
+                            <div class="table-card-top"></div>
+                            <table border="0">
+                                <tr bgcolor="#40bad5">
+                                    <td><div>Owner Name</div></td>
+                                    <td><div>File Info</div></td>
+                                    <td><div>File Name</div></td>
+                                    <td><div>Public Key</div></td>
+                                </tr>
+                                {% for item in data %}
+                                <tr>
+                                    <td><div class="contact_form_name style2">{{item[1]}}</div></td>
+                                    <td><div class="contact_form_name style2">{{item[2]}}</div></td>
+                                    <td><div class="ccontact_form_name style2">{{item[3]}}</div></td>
+                                    <td><div class="contact_form_name style2"><span class="pubkey-wrap" title="{{item[4]}}">{{item[4]}}</span></div></td>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="cpy-right text-center">
+        <p class="text-wh">All rights reserved | Design by <a href="#"> Cloud.</a></p>
+    </div>
+    <a href="#home" class="move-top text-center"><span class="fa fa-level-up" aria-hidden="true"></span></a>
+</body>
+</html>

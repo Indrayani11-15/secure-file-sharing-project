@@ -1,0 +1,471 @@
+<html lang="zxx">
+
+<head>
+    <title>CipherShare | Owner File Search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="keywords" content="Intense Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+        function hideURLbar() { window.scrollTo(0, 1); }
+    </script>
+    <link href="../static/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet" media="all">
+    <link href="../static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; }
+
+        :root {
+            --forest-dark:  #1a3a2a;
+            --forest-mid:   #2d5a3d;
+            --forest-light: #3d7a52;
+            --gold:         #c8b87a;
+            --gold-light:   #e0d0a0;
+            --cream:        #f5f2eb;
+            --cream-dark:   #ede8dc;
+            --text-dark:    #1e2a1e;
+            --text-mid:     #4a5c45;
+            --text-light:   #8a7a5e;
+            --border:       #ddd6c8;
+            --white:        #ffffff;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: var(--cream);
+            color: var(--text-dark);
+            margin: 0; padding: 0; overflow-x: hidden;
+        }
+
+        /* ── HEADER ── */
+        header#home {
+            background: var(--forest-dark);
+            border-bottom: 3px solid var(--gold);
+            position: sticky; top: 0; z-index: 200;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.3);
+        }
+        header#home .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+        header#home .header { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+        #logo h1 { margin: 0; line-height: 1.2; }
+        #logo h1 a {
+            color: var(--gold); text-decoration: none;
+            font-family: 'Playfair Display', serif;
+            font-size: 26px; font-weight: 700; letter-spacing: 0.5px;
+        }
+        #logo h1 a span {
+            display: block; font-family: 'Source Sans Pro', sans-serif;
+            font-size: 10px; color: rgba(200,184,122,0.45);
+            letter-spacing: 3.5px; text-transform: uppercase;
+            font-weight: 400; margin-top: 2px;
+        }
+        .nav_w3ls nav ul.menu { list-style: none; display: flex; gap: 4px; margin: 0; padding: 0; }
+        .nav_w3ls nav ul.menu li a {
+            color: rgba(255,255,255,0.6); text-decoration: none;
+            font-size: 13px; font-weight: 600; padding: 8px 16px;
+            border-radius: 2px; text-transform: uppercase;
+            letter-spacing: 0.8px; transition: all 0.2s; display: block;
+        }
+        .nav_w3ls nav ul.menu li a:hover { color: var(--gold); background: rgba(200,184,122,0.1); }
+        .nav_w3ls nav label.toggle { display: none; color: var(--gold); cursor: pointer; font-size: 14px; padding: 8px 14px; border: 1px solid rgba(200,184,122,0.3); border-radius: 2px; }
+        #drop { display: none; }
+
+        /* ── PAGE HERO ── */
+        .page-hero {
+            background: linear-gradient(135deg, var(--forest-dark) 0%, var(--forest-mid) 100%);
+            padding: 48px 0 44px; position: relative; overflow: hidden;
+        }
+        .page-hero::before {
+            content: ""; position: absolute; inset: 0; pointer-events: none;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c8b87a' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .page-hero .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 2; }
+        .page-hero-eyebrow {
+            display: inline-flex; align-items: center; gap: 10px;
+            color: var(--gold); font-size: 11px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 3px; margin-bottom: 12px;
+        }
+        .page-hero-eyebrow::before { content: ""; display: inline-block; width: 28px; height: 2px; background: var(--gold); }
+        .page-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px; font-weight: 700; color: var(--white); margin: 0 0 8px;
+        }
+        .page-hero p { color: rgba(255,255,255,0.5); font-size: 15px; margin: 0; }
+
+        /* ── BREADCRUMB ── */
+        nav[aria-label="breadcrumb"] { background: var(--forest-mid) !important; padding: 10px 0 !important; }
+        nav[aria-label="breadcrumb"] .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+        ol.breadcrumb {
+            display: flex !important; align-items: center !important; list-style: none !important;
+            margin: 0 !important; padding: 0 !important;
+            background: transparent !important; border: none !important; box-shadow: none !important;
+        }
+        .breadcrumb-item + .breadcrumb-item::before { content: "›" !important; color: rgba(200,184,122,0.4) !important; padding: 0 8px !important; }
+        .breadcrumb-item a { color: rgba(200,184,122,0.65) !important; text-decoration: none; font-size: 12px; }
+        .breadcrumb-item a:hover { color: var(--gold) !important; }
+        .breadcrumb-item.active { color: var(--gold) !important; font-size: 12px; font-weight: 600; }
+
+        /* ── MAIN ── */
+        .main-section { padding: 56px 0 80px; }
+        .main-section .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+
+        /* ── SEARCH CARD ── */
+        .search-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(26,58,42,0.08);
+            margin-bottom: 36px;
+        }
+        .search-card-top { height: 4px; background: linear-gradient(to right, var(--forest-dark), var(--forest-mid), var(--gold)); }
+        .search-card-body { padding: 32px 36px; display: flex; align-items: flex-end; gap: 16px; flex-wrap: wrap; }
+
+        .search-card-body h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px; font-weight: 700; color: var(--forest-dark);
+            margin: 0 0 20px; width: 100%;
+        }
+        .search-field { flex: 1; min-width: 260px; }
+        .search-field label {
+            display: block; color: var(--forest-mid);
+            font-size: 11px; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 1.2px; margin-bottom: 7px;
+        }
+
+        /* Search input with icon */
+        .search-input-wrap { position: relative; }
+        .search-input-wrap i {
+            position: absolute; left: 14px; top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light); font-size: 14px;
+            pointer-events: none;
+        }
+        .search-input-wrap input {
+            width: 100%; border: 1px solid var(--border); border-radius: 2px;
+            padding: 11px 14px 11px 40px;
+            font-size: 14px; font-family: 'Source Sans Pro', sans-serif;
+            color: var(--text-dark); background: #fdfcf9;
+            transition: border-color 0.2s, box-shadow 0.2s; outline: none;
+        }
+        .search-input-wrap input:focus {
+            border-color: var(--forest-mid);
+            box-shadow: 0 0 0 3px rgba(45,90,61,0.08);
+            background: var(--white);
+        }
+
+        .btn-search {
+            padding: 12px 28px; background: var(--forest-dark); color: var(--gold);
+            font-family: 'Source Sans Pro', sans-serif; font-weight: 700;
+            font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px;
+            border: none; border-radius: 2px; cursor: pointer;
+            transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px;
+        }
+        .btn-search:hover { background: var(--forest-mid); color: var(--gold-light); }
+        .btn-reset {
+            padding: 12px 22px; background: var(--white); color: var(--text-light);
+            font-family: 'Source Sans Pro', sans-serif; font-weight: 600;
+            font-size: 13px; text-transform: uppercase; letter-spacing: 1.2px;
+            border: 1px solid var(--border); border-radius: 2px; cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-reset:hover { border-color: var(--forest-mid); color: var(--text-dark); }
+
+        /* ── RESULTS TABLE CARD ── */
+        .results-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(26,58,42,0.08);
+        }
+        .results-card-header {
+            background: var(--forest-dark);
+            padding: 18px 28px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .results-card-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px; font-weight: 700; color: var(--white); margin: 0;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .results-card-header h3 i { color: var(--gold); font-size: 15px; }
+        .results-count {
+            font-size: 11px; color: rgba(200,184,122,0.6);
+            text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700;
+        }
+
+        .results-table-wrap { overflow-x: auto; }
+
+        .results-table {
+            width: 100%; border-collapse: collapse;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+        .results-table thead tr {
+            background: var(--cream-dark);
+            border-bottom: 2px solid var(--border);
+        }
+        .results-table thead th {
+            padding: 13px 20px;
+            font-size: 11px; font-weight: 700; color: var(--forest-mid);
+            text-transform: uppercase; letter-spacing: 1.5px;
+            text-align: left; white-space: nowrap;
+        }
+        .results-table thead th:first-child { padding-left: 28px; }
+        .results-table thead th:last-child { padding-right: 28px; text-align: center; }
+
+        .results-table tbody tr {
+            border-bottom: 1px solid var(--border);
+            transition: background 0.15s;
+        }
+        .results-table tbody tr:last-child { border-bottom: none; }
+        .results-table tbody tr:hover { background: rgba(45,90,61,0.04); }
+
+        .results-table tbody td {
+            padding: 14px 20px;
+            font-size: 14px; color: var(--text-dark); vertical-align: middle;
+        }
+        .results-table tbody td:first-child { padding-left: 28px; font-weight: 600; }
+        .results-table tbody td:last-child { padding-right: 28px; text-align: center; }
+
+        /* Owner name with avatar */
+        .owner-cell { display: flex; align-items: center; gap: 10px; }
+        .owner-avatar {
+            width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+            background: linear-gradient(135deg, var(--forest-mid), var(--forest-light));
+            display: flex; align-items: center; justify-content: center;
+            color: var(--gold); font-size: 12px; font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* File info chip */
+        .file-info-chip {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(45,90,61,0.07); border: 1px solid rgba(45,90,61,0.15);
+            border-radius: 20px; padding: 4px 12px;
+            font-size: 12px; color: var(--forest-mid); font-weight: 600;
+        }
+        .file-info-chip i { font-size: 11px; }
+
+        /* Filename */
+        .file-name { font-size: 13px; color: var(--text-mid); font-family: monospace; background: var(--cream); padding: 3px 8px; border-radius: 3px; }
+
+        /* Pubkey truncated */
+        .pubkey-cell {
+            font-size: 12px; color: var(--text-light);
+            font-family: monospace; max-width: 140px;
+            overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+        }
+
+        /* Send Key Request button */
+        .btn-key-request {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 7px 16px; background: var(--forest-dark); color: var(--gold);
+            font-size: 12px; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 1px; text-decoration: none; border-radius: 2px;
+            transition: all 0.2s; white-space: nowrap;
+        }
+        .btn-key-request:hover {
+            background: var(--forest-mid); color: var(--gold-light);
+            text-decoration: none; transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(26,58,42,0.2);
+        }
+
+        /* Empty state */
+        .empty-state {
+            padding: 60px 20px; text-align: center;
+        }
+        .empty-state i { font-size: 40px; color: var(--border); margin-bottom: 16px; display: block; }
+        .empty-state p { color: var(--text-light); font-size: 15px; margin: 0; }
+
+        /* ── FOOTER / MISC ── */
+        .contact-form-wthreelayouts, .align-w3 { background: transparent !important; border: none !important; box-shadow: none !important; padding: 0 !important; margin: 0 !important; }
+        nav[aria-label="breadcrumb"] ol.breadcrumb, .breadcrumb { background: transparent !important; border: none !important; box-shadow: none !important; }
+        .inner-banner-w3ls { display: none !important; }
+
+        .cpy-right { background: var(--forest-dark) !important; border-top: 3px solid rgba(200,184,122,0.2); padding: 24px 32px !important; }
+        .cpy-right p { color: rgba(200,184,122,0.4) !important; font-size: 13px; margin: 0; font-family: 'Source Sans Pro', sans-serif; }
+        .cpy-right a { color: var(--gold) !important; text-decoration: none; }
+
+        .move-top {
+            position: fixed; bottom: 28px; right: 28px; width: 44px; height: 44px;
+            background: var(--forest-dark); border: 1px solid var(--gold); border-radius: 2px;
+            color: var(--gold) !important; font-size: 16px;
+            display: flex; align-items: center; justify-content: center;
+            text-decoration: none; transition: all 0.2s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.25); z-index: 999;
+        }
+        .move-top:hover { background: var(--forest-mid); transform: translateY(-2px); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 720px) {
+            .search-card-body { flex-direction: column; align-items: stretch; }
+            .btn-search, .btn-reset { width: 100%; justify-content: center; }
+            header#home .header { flex-direction: column; gap: 12px; align-items: flex-start; }
+            .nav_w3ls nav label.toggle { display: block; }
+            .nav_w3ls nav ul.menu {
+                display: none; flex-direction: column;
+                position: absolute; top: 100%; left: 0; right: 0;
+                background: var(--forest-dark); padding: 12px 0;
+                border-top: 1px solid rgba(200,184,122,0.15); gap: 0;
+            }
+            #drop:checked ~ ul.menu { display: flex; }
+            .nav_w3ls nav { position: relative; width: 100%; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header -->
+    <header id="home">
+        <div class="container">
+            <div class="header d-lg-flex justify-content-between align-items-center py-sm-3 py-2 px-sm-2 px-1">
+                <div id="logo">
+                    <h1><a href="#">U Can Access <span>Property Management</span></a></h1>
+                </div>
+                <div class="nav_w3ls ml-lg-5">
+                    <nav>
+                        <label for="drop" class="toggle">Menu</label>
+                        <input type="checkbox" id="drop" />
+                        <ul class="menu">
+                            {% include 'Menu/User.html' %}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- //header -->
+
+    <!-- Page Hero -->
+    <div class="page-hero">
+        <div class="container">
+            <div class="page-hero-eyebrow">File Directory</div>
+            <h1>Owner File Search</h1>
+            <p>Search for owner documents and request access to encryption keys.</p>
+        </div>
+    </div>
+
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">User</li>
+            </ol>
+        </div>
+    </nav>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <script>
+          var messages = {{ messages | safe }};
+          for (var i=0; i<messages.length; i++) { alert(messages[i]); }
+        </script>
+      {% endif %}
+    {% endwith %}
+
+    <!-- Main Content -->
+    <section class="contact-wthree align-w3" id="contact">
+        <div class="main-section">
+            <div class="container">
+
+                <!-- Search Card -->
+                <div class="search-card">
+                    <div class="search-card-top"></div>
+                    <div class="search-card-body">
+                        <h2>Search Documents</h2>
+                        <form action="/search" method="post" class="register-wthree" style="display:flex; align-items:flex-end; gap:16px; flex-wrap:wrap; width:100%;">
+                            <div class="search-field">
+                                <label>File Name</label>
+                                <div class="search-input-wrap">
+                                    <i class="fa fa-search"></i>
+                                    <input type="text" placeholder="Enter filename to search..." name="sear" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-search">
+                                <i class="fa fa-search"></i> Search
+                            </button>
+                            <button type="reset" class="btn-reset">
+                                <i class="fa fa-times"></i> Reset
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Results Table -->
+                <div class="results-card">
+                    <div class="results-card-header">
+                        <h3><i class="fa fa-table"></i> Search Results</h3>
+                        <span class="results-count">Owner Files</span>
+                    </div>
+                    <div class="results-table-wrap">
+                        <table class="results-table">
+                            <thead>
+                                <tr>
+                                    <th>Owner Name</th>
+                                    <th>File Info</th>
+                                    <th>File Name</th>
+                                    <th>Public Key</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in data %}
+                                <tr>
+                                    <td>
+                                        <div class="owner-cell">
+                                            <div class="owner-avatar">{{ item[1][0] if item[1] else '?' }}</div>
+                                            <span>{{ item[1] }}</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="file-info-chip">
+                                            <i class="fa fa-info-circle"></i>
+                                            {{ item[2] }}
+                                        </span>
+                                    </td>
+                                    <td><span class="file-name">{{ item[3] }}</span></td>
+                                    <td><div class="pubkey-cell" title="{{ item[4] }}">{{ item[4] }}</div></td>
+                                    <td>
+                                        <a href="SendKeyRequest?fid={{ item[0] }}" class="btn-key-request">
+                                            <i class="fa fa-key"></i> Request Key
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% else %}
+                                <tr>
+                                    <td colspan="5">
+                                        <div class="empty-state">
+                                            <i class="fa fa-search"></i>
+                                            <p>No results found. Try searching for a different filename.</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- //contact -->
+
+    <!-- copyright -->
+    <div class="cpy-right text-center">
+        <p class="text-wh">All rights reserved | Design by <a href="#"> Cloud.</a></p>
+    </div>
+
+    <!-- move top icon -->
+    <a href="#home" class="move-top text-center">
+        <span class="fa fa-level-up" aria-hidden="true"></span>
+    </a>
+
+</body>
+</html>

@@ -1,0 +1,458 @@
+<html lang="zxx">
+
+<head>
+    <title>Userhome | User Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="keywords" content="Intense Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+        function hideURLbar() { window.scrollTo(0, 1); }
+    </script>
+    <link href="../static/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet" media="all">
+    <link href="../static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; }
+
+        :root {
+            --forest-dark:  #1a3a2a;
+            --forest-mid:   #2d5a3d;
+            --forest-light: #3d7a52;
+            --gold:         #c8b87a;
+            --gold-light:   #e0d0a0;
+            --cream:        #f5f2eb;
+            --cream-dark:   #ede8dc;
+            --text-dark:    #1e2a1e;
+            --text-mid:     #4a5c45;
+            --text-light:   #8a7a5e;
+            --border:       #ddd6c8;
+            --white:        #ffffff;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: var(--cream);
+            color: var(--text-dark);
+            margin: 0; padding: 0; overflow-x: hidden;
+        }
+
+        /* ── HEADER ── */
+        header#home {
+            background: var(--forest-dark);
+            border-bottom: 3px solid var(--gold);
+            position: sticky; top: 0; z-index: 200;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.3);
+        }
+        header#home .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+        header#home .header { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+        #logo h1 { margin: 0; line-height: 1.2; }
+        #logo h1 a {
+            color: var(--gold); text-decoration: none;
+            font-family: 'Playfair Display', serif;
+            font-size: 26px; font-weight: 700; letter-spacing: 0.5px;
+        }
+        #logo h1 a span {
+            display: block; font-family: 'Source Sans Pro', sans-serif;
+            font-size: 10px; color: rgba(200,184,122,0.45);
+            letter-spacing: 3.5px; text-transform: uppercase;
+            font-weight: 400; margin-top: 2px;
+        }
+        .nav_w3ls nav ul.menu { list-style: none; display: flex; gap: 4px; margin: 0; padding: 0; }
+        .nav_w3ls nav ul.menu li a {
+            color: rgba(255,255,255,0.6); text-decoration: none;
+            font-size: 13px; font-weight: 600; padding: 8px 16px;
+            border-radius: 2px; text-transform: uppercase;
+            letter-spacing: 0.8px; transition: all 0.2s; display: block;
+        }
+        .nav_w3ls nav ul.menu li a:hover { color: var(--gold); background: rgba(200,184,122,0.1); }
+        .nav_w3ls nav label.toggle { display: none; color: var(--gold); cursor: pointer; font-size: 14px; padding: 8px 14px; border: 1px solid rgba(200,184,122,0.3); border-radius: 2px; }
+        #drop { display: none; }
+
+        /* ── PAGE HERO ── */
+        .page-hero {
+            background: linear-gradient(135deg, var(--forest-dark) 0%, var(--forest-mid) 100%);
+            padding: 48px 0 44px; position: relative; overflow: hidden;
+        }
+        .page-hero::before {
+            content: ""; position: absolute; inset: 0; pointer-events: none;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c8b87a' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .page-hero .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 2; }
+        .page-hero-eyebrow {
+            display: inline-flex; align-items: center; gap: 10px;
+            color: var(--gold); font-size: 11px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 3px; margin-bottom: 12px;
+        }
+        .page-hero-eyebrow::before { content: ""; display: inline-block; width: 28px; height: 2px; background: var(--gold); }
+        .page-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px; font-weight: 700; color: var(--white); margin: 0 0 8px;
+        }
+        .page-hero p { color: rgba(255,255,255,0.5); font-size: 15px; margin: 0; }
+
+        /* ── BREADCRUMB ── */
+        nav[aria-label="breadcrumb"] { background: var(--forest-mid) !important; padding: 10px 0 !important; }
+        nav[aria-label="breadcrumb"] .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+        ol.breadcrumb {
+            display: flex !important; align-items: center !important; list-style: none !important;
+            margin: 0 !important; padding: 0 !important;
+            background: transparent !important; border: none !important; box-shadow: none !important;
+        }
+        .breadcrumb-item + .breadcrumb-item::before { content: "›" !important; color: rgba(200,184,122,0.4) !important; padding: 0 8px !important; }
+        .breadcrumb-item a { color: rgba(200,184,122,0.65) !important; text-decoration: none; font-size: 12px; }
+        .breadcrumb-item a:hover { color: var(--gold) !important; }
+        .breadcrumb-item.active { color: var(--gold) !important; font-size: 12px; font-weight: 600; }
+
+        /* ── MAIN ── */
+        .main-section { padding: 56px 0 80px; }
+        .main-section .container {
+            max-width: 1200px; margin: 0 auto; padding: 0 32px;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 36px;
+            align-items: flex-start;
+        }
+
+        /* ── LEFT — Profile Card ── */
+        .profile-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(26,58,42,0.08);
+        }
+        .profile-card-banner {
+            height: 80px;
+            background: linear-gradient(135deg, var(--forest-dark), var(--forest-mid));
+            position: relative;
+        }
+        .profile-card-banner::after {
+            content: "";
+            position: absolute; bottom: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--forest-dark), var(--gold));
+        }
+        .profile-avatar-wrap {
+            display: flex; justify-content: center;
+            margin-top: -36px; margin-bottom: 12px; position: relative; z-index: 2;
+        }
+        .profile-avatar {
+            width: 72px; height: 72px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--forest-mid), var(--forest-light));
+            border: 3px solid var(--white);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--gold); font-size: 26px; font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+        .profile-card-info { padding: 0 24px 28px; text-align: center; }
+        .profile-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px; font-weight: 700; color: var(--forest-dark); margin: 0 0 4px;
+        }
+        .profile-username {
+            font-size: 13px; color: var(--text-light); margin: 0 0 16px;
+        }
+
+        /* Status badge */
+        .profile-status {
+            display: inline-flex; align-items: center; gap: 7px;
+            padding: 6px 14px; border-radius: 20px;
+            font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+        .profile-status.active   { background: rgba(45,90,61,0.1); color: var(--forest-mid); border: 1px solid rgba(45,90,61,0.2); }
+        .profile-status.inactive { background: rgba(192,57,43,0.08); color: #c0392b; border: 1px solid rgba(192,57,43,0.2); }
+        .profile-status.pending  { background: rgba(200,184,122,0.15); color: #8a6a20; border: 1px solid rgba(200,184,122,0.3); }
+        .status-dot-sm { width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+
+        .profile-divider { border: none; border-top: 1px solid var(--border); margin: 0 0 20px; }
+
+        /* Quick info rows */
+        .profile-info-row {
+            display: flex; align-items: flex-start; gap: 10px;
+            padding: 8px 0; border-bottom: 1px solid var(--border);
+        }
+        .profile-info-row:last-child { border-bottom: none; }
+        .profile-info-row i { color: var(--forest-mid); font-size: 13px; margin-top: 2px; flex-shrink: 0; width: 16px; }
+        .profile-info-row span { font-size: 13px; color: var(--text-mid); line-height: 1.5; word-break: break-word; }
+
+        /* ── RIGHT — Info Table ── */
+        .info-section { display: flex; flex-direction: column; gap: 0; }
+
+        .info-table-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(26,58,42,0.08);
+        }
+        .info-table-card-top { height: 4px; background: linear-gradient(to right, var(--forest-dark), var(--forest-mid), var(--gold)); }
+        .info-table-card-header {
+            background: var(--forest-dark); padding: 18px 28px;
+            display: flex; align-items: center; gap: 12px;
+        }
+        .info-table-card-header i { color: var(--gold); font-size: 16px; }
+        .info-table-card-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px; font-weight: 700; color: var(--white); margin: 0;
+        }
+
+        /* Detail grid inside card */
+        .detail-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+        }
+        .detail-cell {
+            padding: 24px 28px;
+            border-right: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        .detail-cell:nth-child(3n) { border-right: none; }
+        .detail-cell:nth-last-child(-n+3) { border-bottom: none; }
+        .detail-label {
+            font-size: 10px; font-weight: 700; color: var(--forest-mid);
+            text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px;
+        }
+        .detail-value {
+            font-size: 15px; font-weight: 600; color: var(--text-dark); line-height: 1.4; word-break: break-word;
+        }
+        .detail-value.empty { color: var(--border); font-style: italic; font-weight: 400; font-size: 13px; }
+
+        /* Status detail value */
+        .status-pill {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 4px 12px; border-radius: 20px;
+            font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px;
+        }
+        .status-pill.active   { background: rgba(45,90,61,0.1); color: var(--forest-mid); border: 1px solid rgba(45,90,61,0.2); }
+        .status-pill.inactive { background: rgba(192,57,43,0.08); color: #c0392b; border: 1px solid rgba(192,57,43,0.2); }
+        .status-pill.pending  { background: rgba(200,184,122,0.15); color: #8a6a20; border: 1px solid rgba(200,184,122,0.3); }
+
+        /* Empty state */
+        .empty-state {
+            padding: 60px 20px; text-align: center;
+        }
+        .empty-state i { font-size: 40px; color: var(--border); margin-bottom: 16px; display: block; }
+        .empty-state p { color: var(--text-light); font-size: 15px; margin: 0; }
+
+        /* ── MISC OVERRIDES ── */
+        .contact-form-wthreelayouts, .align-w3 { background: transparent !important; border: none !important; box-shadow: none !important; padding: 0 !important; margin: 0 !important; }
+        nav[aria-label="breadcrumb"] ol.breadcrumb, .breadcrumb { background: transparent !important; border: none !important; box-shadow: none !important; }
+        .inner-banner-w3ls { display: none !important; }
+
+        .cpy-right { background: var(--forest-dark) !important; border-top: 3px solid rgba(200,184,122,0.2); padding: 24px 32px !important; }
+        .cpy-right p { color: rgba(200,184,122,0.4) !important; font-size: 13px; margin: 0; font-family: 'Source Sans Pro', sans-serif; }
+        .cpy-right a { color: var(--gold) !important; text-decoration: none; }
+
+        .move-top {
+            position: fixed; bottom: 28px; right: 28px; width: 44px; height: 44px;
+            background: var(--forest-dark); border: 1px solid var(--gold); border-radius: 2px;
+            color: var(--gold) !important; font-size: 16px;
+            display: flex; align-items: center; justify-content: center;
+            text-decoration: none; transition: all 0.2s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.25); z-index: 999;
+        }
+        .move-top:hover { background: var(--forest-mid); transform: translateY(-2px); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 900px) {
+            .main-section .container { grid-template-columns: 1fr; }
+            .profile-card { max-width: 360px; }
+            .detail-grid { grid-template-columns: 1fr 1fr; }
+            .detail-cell:nth-child(3n) { border-right: 1px solid var(--border); }
+            .detail-cell:nth-child(2n) { border-right: none; }
+        }
+        @media (max-width: 560px) {
+            .detail-grid { grid-template-columns: 1fr; }
+            .detail-cell { border-right: none !important; }
+            header#home .header { flex-direction: column; gap: 12px; align-items: flex-start; }
+            .nav_w3ls nav label.toggle { display: block; }
+            .nav_w3ls nav ul.menu {
+                display: none; flex-direction: column;
+                position: absolute; top: 100%; left: 0; right: 0;
+                background: var(--forest-dark); padding: 12px 0;
+                border-top: 1px solid rgba(200,184,122,0.15); gap: 0;
+            }
+            #drop:checked ~ ul.menu { display: flex; }
+            .nav_w3ls nav { position: relative; width: 100%; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header -->
+    <header id="home">
+        <div class="container">
+            <div class="header d-lg-flex justify-content-between align-items-center py-sm-3 py-2 px-sm-2 px-1">
+                <div id="logo">
+                    <h1><a href="#">CipherShare <span>Protected Digital File Exchange</span></a></h1>
+                </div>
+                <div class="nav_w3ls ml-lg-5">
+                    <nav>
+                        <label for="drop" class="toggle">Menu</label>
+                        <input type="checkbox" id="drop" />
+                        <ul class="menu">
+                            {% include 'Menu/User.html' %}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- //header -->
+
+    <!-- Page Hero -->
+    <div class="page-hero">
+        <div class="container">
+            <div class="page-hero-eyebrow">User Portal</div>
+            <h1>Personal Information</h1>
+            <p>View and manage your registered account details below.</p>
+        </div>
+    </div>
+
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">User</li>
+            </ol>
+        </div>
+    </nav>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <script>
+          var messages = {{ messages | safe }};
+          for (var i=0; i<messages.length; i++) { alert(messages[i]); }
+        </script>
+      {% endif %}
+    {% endwith %}
+
+    <!-- Main Content -->
+    <section class="contact-wthree align-w3" id="contact">
+        <div class="main-section">
+            <div class="container">
+
+                {% for item in data %}
+
+                <!-- LEFT — Profile Summary Card -->
+                <div class="profile-card">
+                    <div class="profile-card-banner"></div>
+                    <div class="profile-avatar-wrap">
+                        <div class="profile-avatar">{{ item[1][0] | upper if item[1] else '?' }}</div>
+                    </div>
+                    <div class="profile-card-info">
+                        <div class="profile-name">{{ item[1] }}</div>
+                        <div class="profile-username">@{{ item[5] }}</div>
+
+                        {% if item[7] | lower == 'active' %}
+                            <div class="profile-status active"><div class="status-dot-sm"></div> Active</div>
+                        {% elif item[7] | lower == 'inactive' %}
+                            <div class="profile-status inactive"><div class="status-dot-sm"></div> Inactive</div>
+                        {% else %}
+                            <div class="profile-status pending"><div class="status-dot-sm"></div> {{ item[7] }}</div>
+                        {% endif %}
+
+                        <hr class="profile-divider">
+
+                        <div class="profile-info-row">
+                            <i class="fa fa-phone"></i>
+                            <span>{{ item[2] }}</span>
+                        </div>
+                        <div class="profile-info-row">
+                            <i class="fa fa-envelope"></i>
+                            <span>{{ item[3] }}</span>
+                        </div>
+                        <div class="profile-info-row">
+                            <i class="fa fa-map-marker"></i>
+                            <span>{{ item[4] }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT — Detail Card -->
+                <div class="info-section">
+                    <div class="info-table-card">
+                        <div class="info-table-card-top"></div>
+                        <div class="info-table-card-header">
+                            <i class="fa fa-id-card"></i>
+                            <h3>Personal Information</h3>
+                        </div>
+                        <div class="detail-grid">
+                            <div class="detail-cell">
+                                <div class="detail-label">Full Name</div>
+                                <div class="detail-value">{{ item[1] if item[1] else '—' }}</div>
+                            </div>
+                            <div class="detail-cell">
+                                <div class="detail-label">Mobile</div>
+                                <div class="detail-value">{{ item[2] if item[2] else '—' }}</div>
+                            </div>
+                            <div class="detail-cell">
+                                <div class="detail-label">Email</div>
+                                <div class="detail-value">{{ item[3] if item[3] else '—' }}</div>
+                            </div>
+                            <div class="detail-cell">
+                                <div class="detail-label">Address</div>
+                                <div class="detail-value">{{ item[4] if item[4] else '—' }}</div>
+                            </div>
+                            <div class="detail-cell">
+                                <div class="detail-label">Username</div>
+                                <div class="detail-value">{{ item[5] if item[5] else '—' }}</div>
+                            </div>
+                            <div class="detail-cell">
+                                <div class="detail-label">Account Status</div>
+                                <div class="detail-value">
+                                    {% if item[7] | lower == 'active' %}
+                                        <span class="status-pill active">● Active</span>
+                                    {% elif item[7] | lower == 'inactive' %}
+                                        <span class="status-pill inactive">● Inactive</span>
+                                    {% else %}
+                                        <span class="status-pill pending">● {{ item[7] }}</span>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% else %}
+
+                <!-- Empty state when no data -->
+                <div style="grid-column: 1 / -1;">
+                    <div class="info-table-card">
+                        <div class="info-table-card-top"></div>
+                        <div class="empty-state">
+                            <i class="fa fa-user-o"></i>
+                            <p>No user information found.</p>
+                        </div>
+                    </div>
+                </div>
+
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+    <!-- //contact -->
+
+    <!-- copyright -->
+    <div class="cpy-right text-center">
+        <p class="text-wh">All rights reserved | Design by <a href="#"> Cloud.</a></p>
+    </div>
+
+    <!-- move top icon -->
+    <a href="#home" class="move-top text-center">
+        <span class="fa fa-level-up" aria-hidden="true"></span>
+    </a>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+Flask
+cryptography
+eciespy
+stegano
+pycryptodome
+pillow
+gunicorn
